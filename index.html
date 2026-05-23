@@ -214,7 +214,8 @@
     }
 
     .modal-card input,
-    .modal-card textarea {
+    .modal-card textarea,
+    .modal-card select {
       width: 100%;
       padding: 12px 14px;
       border: 1px solid var(--border);
@@ -426,6 +427,7 @@
       font-weight: 700;
       letter-spacing: 0.02em;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
     }
 
     .whatsapp-button:hover {
@@ -450,6 +452,8 @@
       font-weight: 600;
       border-radius: 12px;
       text-decoration: none;
+      border: none;
+      cursor: pointer;
       transition: all 0.3s ease;
     }
 
@@ -668,146 +672,6 @@
       background: #dc2626;
     }
 
-    .admin-button {
-      padding: 12px 18px;
-      background: linear-gradient(135deg, #16a34a, #22c55e);
-      color: #fff;
-      border: none;
-      border-radius: 14px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .admin-button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(34, 197, 94, 0.2);
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(15, 23, 42, 0.55);
-      z-index: 50;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .modal-card {
-      width: min(420px, calc(100vw - 32px));
-      background: #fff;
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.18);
-      color: #111827;
-    }
-
-    .modal-card h2 {
-      margin-bottom: 16px;
-      font-size: 1.6rem;
-    }
-
-    .modal-subtitle {
-      margin-bottom: 22px;
-      color: #475569;
-    }
-
-    .modal-card label {
-      display: block;
-      margin-top: 16px;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-      color: #475569;
-    }
-
-    .modal-card input {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid rgba(15, 23, 42, 0.14);
-      border-radius: 14px;
-      background: #f8fafc;
-      color: #111827;
-      font-size: 1rem;
-    }
-
-    .modal-card textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid rgba(15, 23, 42, 0.14);
-      border-radius: 14px;
-      background: #f8fafc;
-      color: #111827;
-      font-size: 1rem;
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .modal-actions {
-      display: flex;
-      gap: 14px;
-      margin-top: 22px;
-      flex-wrap: wrap;
-    }
-
-    .modal-secondary {
-      background: transparent;
-      border: 1px solid rgba(15, 23, 42, 0.16);
-      color: #111827;
-      border-radius: 14px;
-      padding: 12px 18px;
-      cursor: pointer;
-    }
-
-    .modal-message {
-      margin-top: 16px;
-      color: #dc2626;
-      min-height: 1.2rem;
-    }
-
-    .admin-panel {
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      border-radius: 28px;
-      padding: 28px;
-      margin-top: 32px;
-      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.12);
-    }
-
-    .admin-panel h2 {
-      margin-bottom: 12px;
-      color: #111827;
-    }
-
-    .admin-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin: 20px 0;
-      color: #475569;
-    }
-
-    .admin-summary {
-      color: #475569;
-      line-height: 1.7;
-    }
-
-    .admin-logout {
-      margin-top: 22px;
-      padding: 14px 20px;
-      border: none;
-      border-radius: 16px;
-      background: #ef4444;
-      color: #fff;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
     .search-container input:focus {
       border-color: #16a34a !important;
       box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
@@ -879,8 +743,7 @@
 
     <section id="adminPanel" class="admin-panel hidden">
       <h2>Admin Kontrol Paneli</h2>
-      <p>Hoş geldin, <strong>Yahya</strong>. Bu panelde site içeriğini görüntüleyebilir, ürün ekleyebilir ve varolan
-        ürünleri düzenleyebilirsin.</p>
+      <p>Hoş geldin, <strong>Yahya</strong>. Bu panelde site içeriğini görüntüleyebilir, ürün ekleyebilir ve varolan ürünleri düzenleyebilirsin.</p>
       <div class="admin-info">
         <div><strong>Admin:</strong> Yahya</div>
         <div><strong>Telefon:</strong> 0541 529 1307</div>
@@ -889,8 +752,7 @@
         <button class="admin-button" id="adminAddProduct">Ürün Ekle</button>
       </div>
       <div class="admin-summary">
-        <p>Ürün düzenlemek için aşağıdaki ürün kartlarındaki "Düzenle" butonuna basın. Yeni ürün eklemek için "Ürün
-          Ekle"ye tıklayın.</p>
+        <p>Ürün düzenlemek için aşağıdaki ürün kartlarındaki "Düzenle" butonuna basın. Yeni ürün eklemek için "Ürün Ekle"ye tıklayın.</p>
       </div>
       <button class="admin-logout" id="adminLogout">Çıkış Yap</button>
     </section>
@@ -902,8 +764,7 @@
         <label for="productTitle">Ürün Adı</label>
         <input id="productTitle" type="text" placeholder="Ürün adı" />
         <label for="productCategory">Kategori</label>
-        <select id="productCategory"
-          style="width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 14px; background: var(--input-bg); color: var(--text); font-size: 1rem; transition: all 0.3s ease;">
+        <select id="productCategory">
           <option value="Diğer">Diğer</option>
           <option value="Tesisat">Tesisat</option>
           <option value="Su Sistemleri">Su Sistemleri</option>
@@ -921,8 +782,7 @@
     </div>
 
     <div class="search-container" style="margin-top: 32px;">
-      <input type="text" id="searchInput" placeholder="Ürünlerde ara..."
-        style="width: 100%; padding: 14px 20px; border-radius: 16px; border: 1px solid var(--border); font-size: 1.05rem; outline: none; transition: border-color 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s; background: var(--input-bg); color: var(--text);" />
+      <input type="text" id="searchInput" placeholder="Ürünlerde ara..." style="width: 100%; padding: 14px 20px; border-radius: 16px; border: 1px solid var(--border); font-size: 1.05rem; outline: none; transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;">
     </div>
 
     <div class="category-filters" id="categoryFilters">
@@ -940,16 +800,13 @@
         Dükkanın Konumu Burada
       </a>
       <p style="margin-top: 20px; color: #475569; line-height: 1.7;">Instagram hesabımız:</p>
-      <a class="location-link"
-        href="https://www.instagram.com/harmanliticaret6?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-        target="_blank" rel="noreferrer noopener">
+      <a class="location-link" href="https://www.instagram.com/harmanliticaret6?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noreferrer noopener">
         @harmanliticaret6
       </a>
     </section>
   </div>
 
-  <footer
-    style="margin-top: 48px; padding: 24px; text-align: center; color: #475569; font-size: 0.95rem; border-top: 1px solid var(--border); background: var(--surface); backdrop-filter: blur(10px); transition: background 0.3s ease, border-color 0.3s ease;">
+  <footer style="margin-top: 48px; padding: 24px; text-align: center; color: #475569; font-size: 0.95rem; border-top: 1px solid var(--border); background: var(--surface); backdrop-filter: blur(10px); transition: background 0.3s ease, color 0.3s ease;">
     <p>&copy; 2026 Harmanlı İnşaat Yapı Malzemeleri. Tüm hakları saklıdır.</p>
     <p style="margin-top: 8px; font-size: 0.85rem;">Tel: 0541 529 1307 | Sosyal Medya: @harmanliticaret6</p>
   </footer>
@@ -957,13 +814,30 @@
   <div id="toastContainer" class="toast-container"></div>
   <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Yukarı Çık">↑</button>
 
-  <a href="https://wa.me/905415291307?text=Merhaba, sitenizi ziyaret ettim ve ürünleriniz hakkında genel bir bilgi almak istiyorum." class="floating-wa" target="_blank" rel="noreferrer noopener" title="WhatsApp ile İletişime Geçin">
+  <a href="https://wa.me/905415291307?text=Merhaba, sitenizi ziyaret ettim ve ürünleriniz hakkında genel bir bilgi almak istiyorum." class="floating-wa" target="_blank" rel="noreferrer noopener" title="WhatsApp ile iletişim kur">
     <svg viewBox="0 0 24 24" fill="white">
-      <path d="M12.031 0C5.385 0 .003 5.383.003 12.028c0 2.124.553 4.197 1.605 6.02L.003 24l6.096-1.597c1.764.966 3.754 1.474 5.927 1.474 6.643 0 12.023-5.383 12.023-12.028C24.048 5.384 18.673 0 12.031 0zm3.87 17.202c-.595.347-1.767.708-2.5.708-.732 0-3.136-.554-5.343-2.763-2.207-2.21-2.76-4.613-2.76-5.345 0-.733.36-1.905.707-2.5.346-.596.883-.797 1.25-.797.368 0 .614.04.825.04.212 0 .425-.04.708.614.283.655 1.042 2.52 1.135 2.703.095.183.188.368.047.653-.141.285-.236.426-.425.653-.19.227-.393.473-.554.614-.19.16-.395.334-.188.687.206.353.93 1.523 1.996 2.476 1.378 1.233 2.518 1.616 2.87 1.802.355.186.556.14.757-.046.2-.187.848-.99 1.084-1.33.236-.34.472-.284.79-.142.316.142 1.997.942 2.34 1.11.34.17.565.257.646.4.082.14.082.813-.263 1.408z" />
+      <path d="M12.031 0C5.385 0 .003 5.383.003 12.028c0 2.124.553 4.197 1.605 6.02L.003 24l6.096-1.597c1.764.966 3.754 1.474 5.927 1.474 6.643 0 12.023-5.383 12.023-12.028C24.048 5.384 18.673 0 12.031 0zm0 22.053c-1.854 0-3.654-.506-5.223-1.464l-.374-.222-3.881 1.017 1.034-3.78-.241-.383c-1.044-1.657-1.595-3.574-1.595-5.543 0-5.795 4.715-10.514 10.514-10.514 5.799 0 10.514 4.719 10.514 10.514-2 10.514-4.715 10.514-10.514 10.514zm5.849-7.886c-.32-.16-1.896-.937-2.19-1.042-.294-.104-.507-.16-.72.16-.213.32-.826 1.042-1.013 1.255-.187.213-.373.239-.693.08-.32-.16-1.35-.497-2.571-1.586-.951-.847-1.594-1.893-1.781-2.213-.187-.32-.02-.493.14-.652.144-.144.32-.373.48-.56.16-.187.213-.32.32-.533.107-.213.053-.4-.027-.56-.08-.16-.72-1.734-.987-2.373-.26-.6-.523-.52-.72-.52-.187 0-.4-.027-.613-.027-.213 0-.56.08-.853.373-.294.294-1.122 1.095-1.122 2.669 0 1.574.576 3.096.656 3.309.08.213 1.122 1.715 2.718 2.404 1.596.688 1.596.915 1.883 1.022.288.107.667.08.853-.053.187-.134.6-.527.765-1.042.16-.515.32-1.03.374-1.243.053-.213.32-.32.533-.374.213-.053 1.255-.32 1.482-.373z"/>
     </svg>
   </a>
 
-  <script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+    import { getDatabase, ref, set, remove, onValue } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDz1s3cElANIfUtCbsp_4LAJ0_L0VrmCxI",
+      authDomain: "harmanli-ticaret.firebaseapp.com",
+      projectId: "harmanli-ticaret",
+      storageBucket: "harmanli-ticaret.firebasestorage.app",
+      messagingSenderId: "352006021887",
+      appId: "1:352006021887:web:6a38ca82620881cfd7e2ca",
+      databaseURL: "https://harmanli-ticaret-default-rtdb.europe-west1.firebasedatabase.app/"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    // Theme Toggle (localStorage için)
     const themeToggle = document.getElementById("themeToggle");
     const currentTheme = localStorage.getItem("theme") || "light";
     if (currentTheme === "dark") {
@@ -984,8 +858,13 @@
       }
     });
 
+    // Admin Credentials
     const adminPhone = "05415291307";
     const adminPasswordHash = "NjIwMmF5aGFZ";
+    let isAdminLoggedIn = false;
+    let editingProductId = null;
+
+    // DOM Elements
     const loginModal = document.getElementById("loginModal");
     const adminPanel = document.getElementById("adminPanel");
     const adminOpen = document.getElementById("adminOpen");
@@ -1004,133 +883,36 @@
     const productCancel = document.getElementById("productCancel");
     const productMessage = document.getElementById("productMessage");
     const productGrid = document.getElementById("productGrid");
+    const categoryFilters = document.getElementById("categoryFilters");
     const searchInput = document.getElementById("searchInput");
-    const categoryFiltersContainer = document.getElementById("categoryFilters");
     const toastContainer = document.getElementById("toastContainer");
-    let editingProductIndex = null;
-    let currentCategory = "Tümü";
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-    const defaultProducts = [
-      { title: "PPRC Boru ve Ek Parçaları", description: "Sıcak ve soğuk su tesisatlarında güvenle kullanılabilen, kireçlenme ve paslanma yapmayan uzun ömürlü boru sistemleri.", category: "Tesisat" },
-      { title: "Kombi Bakım ve Temizlik Kiti", description: "Kombinizin performansını artırıp doğalgaz faturasından tasarruf etmenizi sağlayan profesyonel petek ve filtre temizleme seti.", category: "Enerji & Isıtma" },
-      { title: "Poliüretan Köpük İzolasyon", description: "Kapı, pencere boşlukları ve çatlaklar için yüksek ısı ve ses yalıtımı sağlayan, hızlı kuruyan montaj köpüğü.", category: "İzolasyon" },
-      { title: "Paslanmaz Çelik Su Deposu (500L)", description: "İçme suyu ve kullanma suyunu yosun tutmadan, hijyenik bir şekilde saklayabileceğiniz uzun ömürlü paslanmaz su tankı.", category: "Su Sistemleri" },
-      { title: "Akıllı Termostatik Petek Vanası", description: "Odalarınızın sıcaklığını otomatik dengeleyerek %30'a varan ısı tasarrufu sağlayan akıllı vana.", category: "Enerji & Isıtma" },
-      { title: "Mutfak Eviye Bataryası (Krom)", description: "Su damlatmayan seramik kartuşlu, şık ve modern tasarıma sahip paslanmaz krom mutfak bataryası.", category: "Tesisat" },
-      { title: "Dalgıç Pompa (Kirli/Temiz Su)", description: "Kuyu, havuz ve su baskınlarında suyu hızlı tahliye eden, yüksek motor gücüne sahip sessiz çalışan dalgıç pompa.", category: "Su Sistemleri" },
-      { title: "Cam Yünü Çatı Şiltesi", description: "Çatı aralarında ısı kaybını önleyen, yangına dayanıklı ve nefes alabilen yüksek kaliteli yalıtım malzemesi.", category: "İzolasyon" },
-      { title: "Silikon Mastik ve Yapıştırıcılar", description: "Banyo ve mutfaklarda su sızıntısını kesen, küf tutmaz ve yüksek tutuş gücüne sahip su yalıtım silikonu.", category: "Diğer" },
-      { title: "Güneş Enerjili Dış Mekan Aydınlatma", description: "Elektrik faturası ödemeden bahçe ve dış mekanlarınızı aydınlatan, suya tam dayanıklı akıllı LED sistemleri.", category: "Diğer" }
-    ];
+    let allProducts = [];
+    let activeCategory = "Hepsi";
 
-    let products = JSON.parse(localStorage.getItem("harmanli_products_v2")) || defaultProducts;
-    const categories = ["Tümü", "Tesisat", "Su Sistemleri", "Enerji & Isıtma", "İzolasyon", "Diğer"];
+    // Firebase Products Reference
+    const productsRef = ref(db, 'products');
 
-    function saveProducts() {
-      localStorage.setItem("harmanli_products_v2", JSON.stringify(products));
-    }
-
-    function showToast(message) {
-      const toast = document.createElement("div");
-      toast.className = "toast";
-      toast.innerHTML = `<span>✓</span> <span>${escapeHtml(message)}</span>`;
-      toastContainer.appendChild(toast);
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          toast.classList.add("show");
+    // Listen for real-time product updates from Firebase
+    onValue(productsRef, (snapshot) => {
+      allProducts = [];
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        Object.keys(data).forEach(key => {
+          allProducts.push({ id: key, ...data[key] });
         });
-      });
-
-      setTimeout(() => {
-        toast.classList.remove("show");
-        setTimeout(() => toast.remove(), 400);
-      }, 3000);
-    }
-
-    function renderCategoryFilters() {
-      categoryFiltersContainer.innerHTML = "";
-      categories.forEach(cat => {
-        const btn = document.createElement("button");
-        btn.className = "category-chip";
-        if (cat === currentCategory) btn.classList.add("active");
-        btn.textContent = cat;
-        btn.addEventListener("click", () => {
-          currentCategory = cat;
-          renderCategoryFilters();
-          renderProducts(searchInput.value);
-        });
-        categoryFiltersContainer.appendChild(btn);
-      });
-    }
-
-    function renderProducts(filterText = "") {
-      productGrid.innerHTML = "";
-
-      let filteredProducts = products.map((p, i) => ({ ...p, originalIndex: i }));
-
-      if (currentCategory !== "Tümü") {
-        filteredProducts = filteredProducts.filter(p => (p.category || "Diğer") === currentCategory);
       }
-
-      if (filterText) {
-        const lowerFilter = filterText.toLowerCase();
-        filteredProducts = filteredProducts.filter(p =>
-          p.title.toLowerCase().includes(lowerFilter) ||
-          p.description.toLowerCase().includes(lowerFilter)
-        );
-      }
-
-      if (filteredProducts.length === 0) {
-        productGrid.innerHTML = `
-          <div class="empty-state">
-            <h3>Ürün Bulunamadı 😕</h3>
-            <p>Arama kriterlerinize uygun bir ürün stoklarımızda görünmüyor.</p>
-          </div>
-        `;
-        return;
-      }
-
-      filteredProducts.forEach((product, index) => {
-        const card = document.createElement("article");
-        card.className = "product-card";
-        card.dataset.index = product.originalIndex;
-        card.style.animationDelay = `${index * 0.08}s`;
-
-        const catLabel = product.category ? `<span style="display: inline-block; padding: 4px 10px; background: var(--accent-soft); color: var(--accent); border-radius: 12px; font-size: 0.8rem; font-weight: 700; margin-bottom: 12px;">${escapeHtml(product.category)}</span>` : '';
-
-        card.innerHTML = `
-          <div>
-            ${catLabel}
-            <h2>${escapeHtml(product.title)}</h2>
-            <p>${escapeHtml(product.description)}</p>
-          </div>
-          <a class="product-whatsapp-btn" href="https://wa.me/905415291307?text=Merhaba, ${encodeURIComponent(product.title)} ürünü hakkında bilgi almak istiyorum." target="_blank" rel="noreferrer noopener">
-            WhatsApp ile Sor
-          </a>
-        `;
-        productGrid.appendChild(card);
-      });
-
-      if (!adminPanel.classList.contains("hidden")) {
-        renderProductEditButtons();
-      }
-    }
-
-    searchInput.addEventListener("input", (e) => {
-      renderProducts(e.target.value);
+      renderCategories();
+      filterAndRender();
     });
 
-    // İlk yüklemede filtreleri ve ürünleri göster
-    renderCategoryFilters();
-    renderProducts();
-
+    // Admin Login
     adminOpen.addEventListener("click", () => {
       loginModal.classList.remove("hidden");
-      adminMessage.textContent = "";
       adminPhoneInput.value = "";
       adminPasswordInput.value = "";
-      adminPhoneInput.focus();
+      adminMessage.textContent = "";
     });
 
     adminClose.addEventListener("click", () => {
@@ -1138,160 +920,204 @@
     });
 
     adminSubmit.addEventListener("click", () => {
-      submitAdminLogin();
-    });
+      const phone = adminPhoneInput.value.replace(/\D/g, "");
+      const password = btoa(adminPasswordInput.value);
 
-    adminPasswordInput.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") {
-        submitAdminLogin();
+      if (phone === adminPhone && password === adminPasswordHash) {
+        isAdminLoggedIn = true;
+        loginModal.classList.add("hidden");
+        adminPanel.classList.remove("hidden");
+        showToast("✓ Başarıyla giriş yapıldı!");
+      } else {
+        adminMessage.textContent = "❌ Telefon veya şifre hatalı!";
       }
     });
 
+    adminLogout.addEventListener("click", () => {
+      isAdminLoggedIn = false;
+      adminPanel.classList.add("hidden");
+      editingProductId = null;
+      showToast("✓ Çıkış yapıldı");
+    });
+
+    // Add/Edit Product
     adminAddProduct.addEventListener("click", () => {
-      openProductModal("add");
+      editingProductId = null;
+      productTitleInput.value = "";
+      productCategoryInput.value = "Diğer";
+      productDescriptionInput.value = "";
+      productModal.classList.remove("hidden");
+      productMessage.textContent = "";
     });
 
     productCancel.addEventListener("click", () => {
-      closeProductModal();
-    });
-
-    productSave.addEventListener("click", () => {
-      saveProductData();
-    });
-
-    function openProductModal(mode, index = null) {
-      editingProductIndex = index;
-      productMessage.textContent = "";
-      if (mode === "edit" && index !== null) {
-        const product = products[index];
-        productTitleInput.value = product.title;
-        productCategoryInput.value = product.category || "Diğer";
-        productDescriptionInput.value = product.description;
-      } else {
-        productTitleInput.value = "";
-        productCategoryInput.value = "Diğer";
-        productDescriptionInput.value = "";
-      }
-      productModal.classList.remove("hidden");
-      productTitleInput.focus();
-    }
-
-    function closeProductModal() {
       productModal.classList.add("hidden");
-    }
+    });
 
-    function saveProductData() {
+    productSave.addEventListener("click", async () => {
       const title = productTitleInput.value.trim();
       const category = productCategoryInput.value;
       const description = productDescriptionInput.value.trim();
 
       if (!title || !description) {
-        productMessage.textContent = "Tüm alanları doldurun.";
+        productMessage.textContent = "❌ Lütfen tüm alanları doldurun!";
         return;
       }
 
-      const newProduct = { title, category, description };
+      try {
+        if (editingProductId) {
+          // Update existing product
+          const updateRef = ref(db, `products/${editingProductId}`);
+          await set(updateRef, { title, category, description });
+          showToast("✓ Ürün güncellendi!");
+        } else {
+          // Add new product
+          const newProductId = Date.now().toString();
+          const newProductRef = ref(db, `products/${newProductId}`);
+          await set(newProductRef, { title, category, description });
+          showToast("✓ Ürün eklendi!");
+        }
+        productModal.classList.add("hidden");
+        editingProductId = null;
+      } catch (error) {
+        productMessage.textContent = "❌ Hata: " + error.message;
+      }
+    });
 
-      if (editingProductIndex !== null) {
-        products[editingProductIndex] = newProduct;
-        showToast("Ürün başarıyla güncellendi!");
-      } else {
-        products.push(newProduct);
-        showToast("Yeni ürün başarıyla eklendi!");
+    // Render Products
+    function renderProducts(productsToRender) {
+      productGrid.innerHTML = "";
+
+      if (productsToRender.length === 0) {
+        productGrid.innerHTML = `
+          <div class="empty-state">
+            <h3>Ürün Bulunamadı</h3>
+            <p>Bu kategoride veya arama teriminizde ürün bulunmamaktadır.</p>
+          </div>
+        `;
+        return;
       }
 
-      saveProducts();
-      renderProducts(searchInput.value);
-      closeProductModal();
-    }
+      productsToRender.forEach((product, index) => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.style.animationDelay = `${index * 0.1}s`;
 
-    function deleteProductData(index) {
-      const confirmed = confirm("Bu ürünü silmek istediğinizden emin misiniz?");
-      if (!confirmed) return;
+        let adminActions = "";
+        if (isAdminLoggedIn) {
+          adminActions = `
+            <div class="product-admin-actions">
+              <button class="product-edit" data-id="${product.id}">Düzenle</button>
+              <button class="product-delete" data-id="${product.id}">Sil</button>
+            </div>
+          `;
+        }
 
-      products.splice(index, 1);
-      saveProducts();
-      editingProductIndex = null;
-      showToast("Ürün silindi.");
-      renderProducts(searchInput.value);
-    }
+        card.innerHTML = `
+          <h2>${product.title}</h2>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span style="padding: 6px 12px; background: var(--accent-soft); color: var(--accent); border-radius: 12px; font-size: 0.85rem; font-weight: 600;">${product.category}</span>
+          </div>
+          <p>${product.description}</p>
+          <div class="product-footer">
+            <a href="https://wa.me/905415291307?text=Merhaba, ${encodeURIComponent(product.title)} ürünü hakkında bilgi almak istiyorum." class="product-whatsapp-btn">Bilgi Al</a>
+            ${adminActions}
+          </div>
+        `;
 
-    function renderProductEditButtons() {
-      const cards = productGrid.querySelectorAll(".product-card");
-      cards.forEach((card) => {
-        const index = parseInt(card.dataset.index, 10);
-        let actions = card.querySelector(".product-admin-actions");
-        if (!actions) {
-          actions = document.createElement("div");
-          actions.className = "product-admin-actions";
+        productGrid.appendChild(card);
 
-          const editButton = document.createElement("button");
-          editButton.type = "button";
-          editButton.className = "product-edit";
-          editButton.textContent = "Düzenle";
-          editButton.addEventListener("click", () => openProductModal("edit", index));
+        // Edit button
+        const editBtn = card.querySelector(".product-edit");
+        if (editBtn) {
+          editBtn.addEventListener("click", () => {
+            editingProductId = product.id;
+            productTitleInput.value = product.title;
+            productCategoryInput.value = product.category;
+            productDescriptionInput.value = product.description;
+            productModal.classList.remove("hidden");
+            productMessage.textContent = "";
+          });
+        }
 
-          const deleteButton = document.createElement("button");
-          deleteButton.type = "button";
-          deleteButton.className = "product-delete";
-          deleteButton.textContent = "Sil";
-          deleteButton.addEventListener("click", () => deleteProductData(index));
-
-          actions.appendChild(editButton);
-          actions.appendChild(deleteButton);
-          card.appendChild(actions);
+        // Delete button
+        const deleteBtn = card.querySelector(".product-delete");
+        if (deleteBtn) {
+          deleteBtn.addEventListener("click", async () => {
+            if (confirm("Bu ürünü silmek istediğinizden emin misiniz?")) {
+              try {
+                const deleteRef = ref(db, `products/${product.id}`);
+                await remove(deleteRef);
+                showToast("✓ Ürün silindi!");
+              } catch (error) {
+                alert("Hata: " + error.message);
+              }
+            }
+          });
         }
       });
     }
 
-    function removeProductEditButtons() {
-      productGrid.querySelectorAll(".product-admin-actions").forEach((actions) => actions.remove());
+    // Render Categories
+    function renderCategories() {
+      const categories = ["Hepsi", ...new Set(allProducts.map(p => p.category))];
+      categoryFilters.innerHTML = "";
+
+      categories.forEach(category => {
+        const chip = document.createElement("button");
+        chip.className = "category-chip";
+        if (category === activeCategory) chip.classList.add("active");
+        chip.textContent = category;
+
+        chip.addEventListener("click", () => {
+          activeCategory = category;
+          document.querySelectorAll(".category-chip").forEach(c => c.classList.remove("active"));
+          chip.classList.add("active");
+          filterAndRender();
+        });
+
+        categoryFilters.appendChild(chip);
+      });
     }
 
-    adminLogout.addEventListener("click", () => {
-      adminPanel.classList.add("hidden");
-      removeProductEditButtons();
-    });
+    // Filter and Render
+    function filterAndRender() {
+      let filtered = allProducts;
 
-    function hashPassword(password) {
-      return btoa(password.split('').reverse().join(''));
-    }
-
-    function submitAdminLogin() {
-      const phone = adminPhoneInput.value.trim();
-      const password = adminPasswordInput.value.trim();
-      if (!phone) {
-        adminMessage.textContent = "Lütfen telefon numaranızı girin.";
-        return;
+      if (activeCategory !== "Hepsi") {
+        filtered = filtered.filter(p => p.category === activeCategory);
       }
-      if (!password) {
-        adminMessage.textContent = "Lütfen şifrenizi girin.";
-        return;
+
+      const searchTerm = searchInput.value.toLowerCase();
+      if (searchTerm) {
+        filtered = filtered.filter(p =>
+          p.title.toLowerCase().includes(searchTerm) ||
+          p.description.toLowerCase().includes(searchTerm)
+        );
       }
 
-      const hashedInput = hashPassword(password);
-
-      if (phone === adminPhone && hashedInput === adminPasswordHash) {
-        loginModal.classList.add("hidden");
-        adminPanel.classList.remove("hidden");
-        adminMessage.textContent = "";
-        showToast("Admin paneline giriş yapıldı.");
-        renderProducts(searchInput.value);
-      } else {
-        adminMessage.textContent = "Telefon numarası veya şifre hatalı.";
-      }
+      renderProducts(filtered);
     }
 
-    function escapeHtml(text) {
-      return text
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/\"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+    // Search Input
+    searchInput.addEventListener("input", filterAndRender);
+
+    // Toast Notification
+    function showToast(message) {
+      const toast = document.createElement("div");
+      toast.className = "toast";
+      toast.textContent = message;
+      toastContainer.appendChild(toast);
+
+      setTimeout(() => toast.classList.add("show"), 10);
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 400);
+      }, 3000);
     }
 
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    // Scroll to Top Button
     window.addEventListener("scroll", () => {
       if (window.scrollY > 300) {
         scrollToTopBtn.classList.add("visible");
@@ -1303,7 +1129,19 @@
     scrollToTopBtn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+    // Modal Click Outside to Close
+    loginModal.addEventListener("click", (e) => {
+      if (e.target === loginModal) loginModal.classList.add("hidden");
+    });
+
+    productModal.addEventListener("click", (e) => {
+      if (e.target === productModal) productModal.classList.add("hidden");
+    });
+
+    // Initial render
+    renderCategories();
+    filterAndRender();
   </script>
 </body>
-
 </html>
